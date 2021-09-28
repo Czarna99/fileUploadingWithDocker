@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  application:
+    image: app
+    build: .
+    volumes:
+      - ./files:/fileUploadWithDocker/files
+    ports:
+      - 0.0.0.0:8080:8080
+  backup:
+    image: backup
+    build: .
+    volumes:
+      - ./files:/fileUploadWithDocker/files
+    ports:
+      - 0.0.0.0:8090:8080
+      
